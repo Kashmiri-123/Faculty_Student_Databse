@@ -19,27 +19,26 @@ const getStudentQuery = gql`
           id
           age
       }
-  }
-
+    }
 `
 
-// const addStudentMutation = gql`
-//    mutation($name:String!, $age:Int )
-//    {
-//     addStudent(name:$name,age:$age)
-//     {
-//       name
-//       age
-//       id
-//     }
-//    }
+const addStudentMutation = gql`
+   mutation($name:String!, $age:Int )
+   {
+    addStudent(name:$name,age:$age)
+    {
+      name
+      age
+      id
+    }
+   }
 
-// `
+`
 
 const addFacultyMutation = gql`
    mutation($name:String!, $address:String!, $studentId:ID!)
    {
-     addFaculty(name:$name ,address:$address, studentId:$ID)
+     addFaculty(name:$name ,address:$address, studentId:$studentId)
     {
       name
       address
@@ -80,4 +79,4 @@ const getFacultysQuery = gql`
 //    }
 // `
 
-export {getFacultyQuery,getStudentQuery,addFacultyMutation,getFacultysQuery /*,getStudentsQuery*/};
+export {getFacultyQuery,getStudentQuery,addFacultyMutation,getFacultysQuery,addStudentMutation /*,getStudentsQuery*/};
